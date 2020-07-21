@@ -1,43 +1,17 @@
-/*                            Colemak with symbols
-
-This file contains an example configuration for KMonad for the keyboard of a
-Dell Latitude E6430 laptop with ISO layout. This configuration should probably
-work for any keyboard, but the layout might not match the physical layout of
-that keyboard.
-
-*/
-
-
-/*                                     IO
-
-Ideally you'd use the 'by-id' subdirectory of /dev/input, since exact numberings
-are not guaranteed across restarts, but this doens't work for my laptop
-keyboard.
-
-*/
 
 INPUT = LINUX_DEVICE L64 /dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd
 OUTPUT = UINPUT_SINK
 
 
-/*                                 Shortcuts
+@num = LT-numpad
 
-I very much prefer a very dense layout and ensure that my grid can fit in
-5-character wide columns. This means I rename anything that is longer than 4
-characters to some alias.
-
-*/
-
-@num = LT-numpad            // Switching to the numpad layer
-@sym = LT-syms              // Switching to the symbol layer
-
-@spc = TH 300 spc LT-numpad   // Switch to the symbol layer or emit a 'spc'
-@xcp = TH 300 esc lctl      // Escape when tapped, control when held
+@xcp = TH 200 esc lctl
+@spc = TH 200 spc LT-numpad
+@rsp = TH 200 spc LT-main
 
 @anm = LA-numpad
 @rnm = LR-numpad
 
-// Source codes
 SRC
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -47,9 +21,7 @@ SRC
   lctl      lmet lalt           spc            ralt rctl pgup up   pgdn
                                                          left down rght
 
-// Colemak layer. Since this is the first layer, this is the state my KMonad
-// starts in.
-LAYER cole
+LAYER main
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -58,15 +30,15 @@ LAYER cole
   lctl      lmet lalt           @spc           @anm rctl pgup up   pgdn
                                                          left down rght
 
-// Numpad overlay
-LAYER numpad ~ anchor y
-                                     +    7    8    9    0
-                                     =    4    5    6    *
-                                     _    -    1    2    3
-                                     _              @rnm
+LAYER numpad
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    bspc
+  _    _    _    _    _    _    +    7    8    9    0    _    _    _
+  @rnm _    _    _    _    _    =    4    5    6    *    _    ret
+  _    _    _    _    _    _    _    -    1    2    3    /    _
+  _         _    _              @rsp           @rnm _
 
-// Symbol overlay
-LAYER syms ~ anchor w
-       [    ]    !    __
-       (    )    #    %
-       {    }    @    =
+/* LAYER syms ~ anchor w */
+/*        [    ]    !    __ */
+/*        (    )    #    % */
+/*        {    }    @    = */
