@@ -11,7 +11,7 @@
 
 (defcfg
   input  (device-file "/dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd")
-  output (uinput-sink "Test")
+  output (uinput-sink "Kmonad")
   fallthrough true
 )
 
@@ -23,8 +23,8 @@
   ;; caps is esc or control
   xcp  (tap-next esc lctl)
   ;; space is space or enable numpad
-  spc (tap-hold 300 spc @num)
-  rsp (tap-hold 300 spc @man)
+  spc (tap-hold 200 spc @num)
+  rsp (tap-hold 200 spc @man)
   ;; right alt is alt or toggle numpad
   anm (layer-switch numpad)
   rnm (layer-switch main)
