@@ -4,30 +4,40 @@ OUTPUT = UINPUT_SINK
 @num = LT-numpad
 @arr = LT-arrows
 
+// caps is esc or control
 @xcp = TN esc lctl
-@spc = TH 200 spc LT-numpad
-@rsp = TH 200 spc LT-main
-@tab = TN tab LT-arrows
 
+// space is space or enable numpad
+@spc = TH 250 spc LT-numpad
+@rsp = TH 250 spc LT-main
+
+// right alt is alt or toggle numpad
 @anm = LA-numpad
 @rnm = LR-numpad
 
+// tab is tab or enable arrows
+@tab = TN tab LT-arrows
+// left alt is alt or toggle arrows
+@adt = TN LA-arrows lalt
+@rmt = LR-arrows
+
+
 SRC
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt numl
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ins  home pgup 
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    del  end  pgdn
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      lmet lalt           spc            ralt rctl pgup up   pgdn
+  lctl      lmet lalt           spc            ralt rctl      up
                                                          left down rght
 
 LAYER main
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  @tab q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt numl
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ins  home pgup 
+  @tab q    w    e    r    t    y    u    i    o    p    [    ]    \    del  end  pgdn
   @xcp a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      lmet lalt           @spc           @anm rctl pgup up   pgdn
+  lctl      @adt @adt           @spc           @anm rctl      up       
                                                          left down rght
 
 LAYER numpad
@@ -39,13 +49,16 @@ LAYER numpad
   _         _    _              @rsp           @rnm _
 
 
+@clf = C-left
+@crt = C-rght
+
 LAYER arrows
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    left down up   rght _    _    _  
+  _    _    _    _    _    _    _    @clf @crt _    _    _    _    _
+  @rmt _    _    _    _    _    left down up   rght _    _    _  
   _         _    _    _    _    _    _    _    _    _    _    _
-  _         _    _              _              _    _
+  _         _    @rmt           @rsp           _    _
 
 
 // LAYER base
