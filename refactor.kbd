@@ -21,21 +21,19 @@
   num  (layer-toggle numpad)
   arr  (layer-toggle arrows)
   ;; caps is esc or control
-  xcp  (tap-next esc lctl)
+  xcp  (tap-hold-next 400 esc lctl)
   ;; space is space or enable numpad
-  spc (tap-hold 200 spc @num)
-  rsp (tap-hold 200 spc @man)
+  spc (tap-hold 400 spc @num)
+  rsp (tap-hold 400 spc @man)
   ;; right alt is alt or toggle numpad
-  anm (layer-switch numpad)
-  rnm (layer-switch main)
-  ;; tab is tab or enable arrows
-  tab (tap-next tab @arr)
+  ran (layer-switch numpad)
+  ram (layer-switch main)
   ;; left alt is alt or toggle arrows
-  adt (tap-next (layer-switch arrows) lalt)
-  rmt (layer-switch main)
+  aar (tap-hold-next 300 a (layer-toggle arrows))
   ;; control arrows
   clf C-left
   crt C-rght
+  ata A-tab
 )
 
 ;; Define the input-layout coming from the keyboard
@@ -52,26 +50,26 @@
 (deflayer main
   esc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  @tab q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @xcp a    s    d    f    g    h    j    k    l    ;    '    ret
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @xcp @aar s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      @adt @adt           @spc           @anm rctl
+  lctl      lmet lalt @spc           @ran rctl
 )
 
 (deflayer numpad
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    [    ]    {    }    `    +    7    8    9    0    _    _    _
-  @rnm ^    $    \(   \)   &    =    4    5    6    *    0    _  
+  @ram ^    $    \(   \)   &    =    4    5    6    *    0    _  
   _         %    #    @    !    ~    -    1    2    3    /    _
-  _         _    _              @rsp           @rnm _
+  _         _    _              @rsp           @ram _
 )
 
 (deflayer arrows
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    _    _    _    _    _    _    @clf @crt _    _    _    _    _
-  @rmt _    _    _    _    _    left down up   rght _    _    _  
-  _         _    _    _    _    _    _    _    _    _    _    _
-  _         _    @rmt           @rsp           _    _
- )
+  _    _    _    _    _    _    left down up   rght _    _    _  
+  _         _    _    _    _    _    _    home end       _    _    _
+  _         _    _              _              _    _
+)

@@ -1,4 +1,4 @@
-INPUT = LINUX_DEVICE L64 /dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd
+INPUT = LINUX_DEVICE L64 /dev/input/by-id/usb-CHICONY_USB_Keyboard-event-kbd
 OUTPUT = UINPUT_SINK
 
 @num = LT-numpad
@@ -12,7 +12,7 @@ OUTPUT = UINPUT_SINK
 @rsp = TH 300 spc LT-main
 
 // right alt is alt or toggle numpad
-@anm = LA-numpad
+@anm = TN LA-numpad ralt
 @rnm = LR-numpad
 
 // tab is tab or enable arrows
