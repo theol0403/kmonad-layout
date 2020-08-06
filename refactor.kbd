@@ -23,13 +23,13 @@
   ;; caps is esc or control
   xcp  (tap-hold-next 400 esc lctl)
   ;; space is space or enable numpad
-  spc (tap-hold 400 spc @num)
-  rsp (tap-hold 400 spc @man)
+  spc (tap-hold 500 spc @num)
+  rsp (tap-hold 500 spc @man)
   ;; right alt is alt or toggle numpad
   ran (layer-switch numpad)
   ram (layer-switch main)
   ;; left alt is alt or toggle arrows
-  aar (tap-hold-next 300 a (layer-toggle arrows))
+  aar (tap-hold 300 a (layer-toggle arrows))
   ;; control arrows
   clf C-left
   crt C-rght
