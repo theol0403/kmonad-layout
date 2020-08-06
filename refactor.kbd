@@ -11,17 +11,9 @@
   ltn  (layer-toggle numpad)
   lts  (layer-toggle symbols)
   lta  (layer-toggle arrows)
-  ;; switch layers
-  lsm (layer-switch main)
-  lsn (layer-switch numpad)
-  lss (layer-switch symbols)
 
   ;; caps is esc or control
   xcp  (tap-hold-next 500 esc lctl)
-  ;; alt is alt or toggle layer
-  lan (tap-hold 300 @lss lalt)
-  rsn (tap-hold 300 @lsn rsft)
-  ran (tap-hold 300 bspc ralt)
 
   ;; home row commands
   ata (tap-hold 300 a @lta)
@@ -32,8 +24,7 @@
   jts (tap-hold 300 j rsft)
   kts (tap-hold 300 k @lts)
   ltc (tap-hold 300 l rctl)
-  ;te (tap-hold 300 ; esc)
-  'te (tap-hold 300 ' lmet)
+  ;te (tap-hold 300 ; ralt)
 
   ;; control arrows
   clf C-lft
@@ -55,18 +46,18 @@
   _  
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @xcp @ata @stc @dtn @fts g    h    @jts @kts @ltc @;te @'te ret
-  lsft      z    x    c    v    b    n    m    ,    .    /    @rsn
-  lctl      lmet @lan           spc            @ran rctl
+  @xcp @ata @stc @dtn @fts g    h    @jts @kts @ltc @;te _    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl      lmet lalt           spc            ralt rctl
 )
 
 (deflayer numpad
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    _    _    _    _    _    +    7    8    9    0    _    _    _
-  @lsm _    lctl _    lsft _    =    4    5    6    *    0    _  
+  _    _    lctl _    lsft _    =    4    5    6    *    0    _  
   _         _    _    _    _    _    -    1    2    3    /    _
-  _         _    _              _              @lsm _
+  _         _    _              _              _    _
 )
 
 
@@ -74,9 +65,9 @@
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    [    ]    {    }    `    _    _    _    _    _    _    _    _
-  @lsm ^    $    \(   \)   &    _    rsft _    rctl _    _    _  
+  _    ^    $    \(   \)   &    _    rsft _    rctl _    _    _  
   _         %    #    @    !    ~    _    _    _    _    _    _
-  _         _    _              _              @lsm _
+  _         _    _              _              _    _
 )
 
 
