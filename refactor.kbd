@@ -26,6 +26,8 @@
   ltc (tap-hold 300 l rctl)
   ;te (tap-hold 300 ; ralt)
 
+  lss (tap-hold-next 300 shft shft)
+
   ;; control arrows
   clf C-lft
   crt C-rght
@@ -47,7 +49,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    q    w    e    r    t    y    u    i    o    p    [    ]    \
   @xcp @ata @stc @dtn @fts g    h    @jts @kts @ltc @;te _    ret
-  lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+  @lss      z    x    c    v    b    n    m    ,    .    /    rsft
   lctl      lmet lalt           spc            ralt rctl
 )
 
