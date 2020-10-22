@@ -4,33 +4,29 @@
   fallthrough true
 )
 
-;; Define layer toggling shortcuts
 (defalias
   ;; toggle layers
-  ltm  (layer-toggle main)
   ltn  (layer-toggle numpad)
   lts  (layer-toggle symbols)
   lta  (layer-toggle arrows)
 
   ;; caps is esc or control
-  xcp  (tap-hold-next 500 esc lctl)
+  esx  (tap-hold-next 500 esc lctl)
 
   ;; home row commands
-  ata (tap-hold 300 a @lta)
-  stc (tap-hold 300 s lctl)
-  dtn (tap-hold 300 d @ltn)
-  fts (tap-hold 300 f lsft)
+  ata (tap-hold-next-release 300 a lmet)
+  stc (tap-hold-next-release 300 s lalt)
+  dtn (tap-hold-next-release 300 d lctl)
+  fts (tap-hold-next-release 300 f lsft)
 
-  jts (tap-hold 300 j rsft)
-  kts (tap-hold 300 k @lts)
-  ltc (tap-hold 300 l rctl)
-  ;te (tap-hold 300 ; ralt)
+  jts (tap-hold-next-release 300 j rsft)
+  kts (tap-hold-next-release 300 k rctl)
+  ltc (tap-hold-next-release 300 l ralt)
+  ;te (tap-hold-next-release 300 ; rmet)
 
-  lss (tap-hold-next 300 shft shft)
-
-  ;; control arrows
-  clf C-lft
-  crt C-rght
+  lal (tap-hold-next-release 300 tab (layer-toggle arrows))
+  ral (tap-hold-next-release 300 bspc (layer-toggle symbols))
+  spl (tap-hold-next-release 300 spc (layer-toggle numpad))
 )
 
 ;; Define the input-layout coming from the keyboard
@@ -48,9 +44,9 @@
   _  
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
   _    q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @xcp @ata @stc @dtn @fts g    h    @jts @kts @ltc @;te _    ret
-  @lss      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      lmet lalt           spc            ralt rctl
+  @esx @ata @stc @dtn @fts g    h    @jts @kts @ltc @;te _    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl      lmet @lal           @spl           @ral rctl
 )
 
 (deflayer numpad
@@ -77,7 +73,7 @@
 (deflayer arrows
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
-  _    _    _    _    _    _    _    @clf @crt _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    lctl _    lsft _    left down up   rght _    _    _  
   _         _    _    _    _    _    _    home end       _    _    _
   _         _    _              _              _    _
