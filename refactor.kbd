@@ -14,19 +14,19 @@
   esx  (tap-hold-next 500 esc lctl)
 
   ;; home row commands
-  ata (tap-hold-next-release 300 a lmet)
-  stc (tap-hold-next-release 300 s lalt)
-  dtn (tap-hold-next-release 300 d lctl)
-  fts (tap-hold-next-release 300 f lsft)
+  ata (tap-hold-next-release 200 a lmet)
+  stc (tap-hold-next-release 200 s lalt)
+  dtn (tap-hold-next-release 200 d lctl)
+  fts (tap-hold-next-release 200 f lsft)
 
-  jts (tap-hold-next-release 300 j rsft)
-  kts (tap-hold-next-release 300 k rctl)
-  ltc (tap-hold-next-release 300 l ralt)
-  ;te (tap-hold-next-release 300 ; rmet)
+  jts (tap-hold-next-release 200 j rsft)
+  kts (tap-hold-next-release 200 k rctl)
+  ltc (tap-hold-next-release 200 l ralt)
+  ;te (tap-hold-next-release 200 ; rmet)
 
-  lal (tap-hold-next-release 300 tab (layer-toggle arrows))
-  ral (tap-hold-next-release 300 bspc (layer-toggle symbols))
-  spl (tap-hold-next-release 300 spc (layer-toggle numpad))
+  lal (tap-hold-next-release 200 tab (layer-toggle arrows))
+  ral (tap-hold-next-release 200 bspc (layer-toggle symbols))
+  spl (tap-hold-next-release 200 spc (layer-toggle numpad))
 )
 
 ;; Define the input-layout coming from the keyboard
@@ -52,9 +52,9 @@
 (deflayer numpad
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
-  _    _    _    _    _    _    +    7    8    9    0    _    _    _
-  _    _    lctl _    lsft _    =    4    5    6    *    0    _  
-  _         _    _    _    _    _    -    1    2    3    /    _
+  _    _    9    8    7    _    +    7    8    9    0    _    _    _
+  _    0    3    2    1    _    =    4    5    6    *    0    _  
+  _         _    6    5    4    _    -    1    2    3    /    _
   _         _    _              _              _    _
 )
 
@@ -73,7 +73,7 @@
 (deflayer arrows
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _   
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  A-tab    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    lctl _    lsft _    left down up   rght _    _    _  
   _         _    _    _    _    _    _    home end       _    _    _
   _         _    _              _              _    _
